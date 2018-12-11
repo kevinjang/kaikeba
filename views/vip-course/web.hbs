@@ -1,0 +1,24 @@
+<ul>
+    {{#each arr}}
+        <li>
+            #{{addOne @index}} -
+            {{name}} -
+            {{city.name}} -
+            {{#each hobby}}
+                {{.}}
+            {{/each}}
+        </li>
+    {{else}}
+        hello?
+    {{/each}}
+</ul>
+
+<p>生日：{{date birthday 'YYYY-MM-DD HH:mm:ss'}}</p>
+
+{{#extend 'jquery'}}
+    <script>
+        $(function(){
+            alert('yes');
+        });
+    </script>
+{{/extend}}
