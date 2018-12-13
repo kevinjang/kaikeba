@@ -75,8 +75,8 @@ const {initLocals} = require('./middleware');
 app.use(initLocals);
 ```
 
-1. {{#each courses}}{{/each}}
-2. 路由传参数的方式：
+12. {{#each courses}}{{/each}}
+13. 路由传参数的方式：
 
 ```
 > 1. url参数：要有**占位符**
@@ -104,7 +104,7 @@ app.use(initLocals);
 >    ```
 ```
 
-1. 错误处理
+14. 错误处理
 
    ```javascript
    //vip-course.js
@@ -118,7 +118,7 @@ app.use(initLocals);
    });
    ```
 
-2. handlebars语法1
+15. handlebars语法1
 
    > 插值绑定 {{prop}}
    >
@@ -319,7 +319,7 @@ app.use(initLocals);
 
     
 
-6. 
+16. 
 
 
 
