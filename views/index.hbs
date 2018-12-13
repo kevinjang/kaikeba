@@ -9,7 +9,7 @@
     </div>
     <div class="vip-course-list">
         {{#each courses}}
-            <div class="vip-course-item" style="background-image: url({{poster}})">
+            <div class="vip-course-item">
                 <div class="left-text">
                     <p class="course-name">
                         {{name}}
@@ -24,7 +24,7 @@
                     </div>
                     <img src="https://img.kaikeba.com/arrow.png"  class="arrow">
                 </div>
-                <div class="right-img"></div>
+                <div class="right-img" style="background: url({{poster}}) no-repeat;background-size: contain;"></div>
             </div>
         {{/each}}
     </div>
