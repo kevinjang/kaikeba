@@ -66,8 +66,6 @@ exports.initLocals = function(req,res,next){
 }
 ```
 ```
-
-​```javascript
 //app.js
 const {initLocals} = require('./middleware');
 
@@ -75,7 +73,6 @@ const {initLocals} = require('./middleware');
 //app.use('/users',initLocals)此种写法指定了页面，只有指定的页面才会接收到中间件处理后的数据
 //如果需要全局访问，就按照下面的方式书写
 app.use(initLocals);
-​```
 ```
 
 1. {{#each courses}}{{/each}}
