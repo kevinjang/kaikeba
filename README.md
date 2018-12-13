@@ -59,13 +59,13 @@ kaikeba studying project
 11. 中间件：对req、res对象进行预处理的函数
 
 ```
-​```javascript
 //middleware/index.js
 exports.initLocals = function(req,res,next){
     //...
     next();//必须执行，否则无法继续后面的响应
 }
-​```
+```
+```
 
 ​```javascript
 //app.js
