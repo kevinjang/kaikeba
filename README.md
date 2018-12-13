@@ -146,9 +146,9 @@ app.use(initLocals);
    >
    > ​	如果arr是空数组或者为空时，可以用下面的代码提示用户
    >
-   > ​	{{else }}{{/else}}
+   > ​	{{else }}{{/each}}
 
-3. 帮助方法：hbs是单一实例的，运行时只有一个hbs实例，创建helper时需要引入该实例
+16. 帮助方法：hbs是单一实例的，运行时只有一个hbs实例，创建helper时需要引入该实例
 
    > 1. 行内helper：最终输出只是字符串的helper
    >
@@ -236,7 +236,7 @@ app.use(initLocals);
    >
    >    其他handlebars帮助方法[^1]：
 
-4. 部分视图 - partial（每次编写新的partial，需要重启）
+17. 部分视图 - partial（每次编写新的partial，需要重启）
 
    ```javascript
    //helpers/index.js
@@ -272,7 +272,7 @@ app.use(initLocals);
    });
    ```
 
-5. 块级partial
+18. 块级partial
 
    ```handlebars
    {{#> ooxx}}出现错误时，能够看到这句话{{/ooxx}}
@@ -319,7 +319,7 @@ app.use(initLocals);
 
     
 
-16. 
+19. 
 
 
 
