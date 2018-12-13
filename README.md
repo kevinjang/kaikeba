@@ -59,15 +59,13 @@ kaikeba studying project
 11. 中间件：对req、res对象进行预处理的函数
 
 ```
-​```javascript
 //middleware/index.js
 exports.initLocals = function(req,res,next){
     //...
     next();//必须执行，否则无法继续后面的响应
 }
-​```
-
-​```javascript
+```
+```
 //app.js
 const {initLocals} = require('./middleware');
 
@@ -75,11 +73,10 @@ const {initLocals} = require('./middleware');
 //app.use('/users',initLocals)此种写法指定了页面，只有指定的页面才会接收到中间件处理后的数据
 //如果需要全局访问，就按照下面的方式书写
 app.use(initLocals);
-​```
 ```
 
-1. {{#each courses}}{{/each}}
-2. 路由传参数的方式：
+12. {{#each courses}}{{/each}}
+13. 路由传参数的方式：
 
 ```
 > 1. url参数：要有**占位符**
@@ -107,7 +104,7 @@ app.use(initLocals);
 >    ```
 ```
 
-1. 错误处理
+14. 错误处理
 
    ```javascript
    //vip-course.js
@@ -121,7 +118,7 @@ app.use(initLocals);
    });
    ```
 
-2. handlebars语法1
+15. handlebars语法1
 
    > 插值绑定 {{prop}}
    >
@@ -149,9 +146,9 @@ app.use(initLocals);
    >
    > ​	如果arr是空数组或者为空时，可以用下面的代码提示用户
    >
-   > ​	{{else }}{{/else}}
+   > ​	{{else }}{{/each}}
 
-3. 帮助方法：hbs是单一实例的，运行时只有一个hbs实例，创建helper时需要引入该实例
+16. 帮助方法：hbs是单一实例的，运行时只有一个hbs实例，创建helper时需要引入该实例
 
    > 1. 行内helper：最终输出只是字符串的helper
    >
@@ -239,7 +236,7 @@ app.use(initLocals);
    >
    >    其他handlebars帮助方法[^1]：
 
-4. 部分视图 - partial（每次编写新的partial，需要重启）
+17. 部分视图 - partial（每次编写新的partial，需要重启）
 
    ```javascript
    //helpers/index.js
@@ -275,7 +272,7 @@ app.use(initLocals);
    });
    ```
 
-5. 块级partial
+18. 块级partial
 
    ```handlebars
    {{#> ooxx}}出现错误时，能够看到这句话{{/ooxx}}
@@ -322,7 +319,7 @@ app.use(initLocals);
 
     
 
-6. 
+19. 
 
 
 
