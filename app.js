@@ -11,6 +11,8 @@ var usersRouter = require('./routes/users');
 var vipCourseRouter = require('./routes/vip-course');
 var openCourseRouter = require('./routes/open-courses');
 
+
+
 var app = express();
 
 // view engine setup
@@ -26,6 +28,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 //注册自定义中间件
 app.use(initLocals);
+
+// app.use(require('./model'));
 
 app.use('/', indexRouter);
 // initLocals();

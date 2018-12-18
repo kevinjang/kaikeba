@@ -9,6 +9,7 @@ exports.initLocals = function (req,res,next) {
         {url: '/vip-course/python', icon:'https://img.kaikeba.com/python_menu.png'
             ,name:'Python爬虫商业项目班'
             ,description:'廖雪峰亲自传授如何用python，让天下没有爬不到的数据'
+            ,poster:'https://img.kaikeba.com/python_vip_new.png'
         }
     ];
     next();
