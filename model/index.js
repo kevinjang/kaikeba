@@ -1,4 +1,6 @@
 const Sequelize = require('sequelize');
+const fs = require('fs');
+const path = require('path');
 const sequelize = new Sequelize('kkb', 'root', 'tingjiaN*&768*', {
     host: 'localhost',
     dialect: 'mysql',
@@ -11,15 +13,29 @@ const sequelize = new Sequelize('kkb', 'root', 'tingjiaN*&768*', {
 });
 
 //定义模型，反向创建进入数据库
-const User = sequelize.define('user', {
-    firstName: Sequelize.STRING,
-    lastName: Sequelize.STRING
-});
-
-User.sync({force: false}).then(() => {
-    //插入若干测试数据
-    console.log('sequelize run!');
-});
+// const User = sequelize.define('user', {
+//     firstName: Sequelize.STRING,
+//     lastName: Sequelize.STRING
+// });
+//
+// User.sync({force: false}).then(() => {
+//     //插入若干测试数据
+//     console.log('sequelize run!');
+//     // User.create({
+//     //     firstName: 'Tom',
+//     //     lastName:'Cruise'
+//     // })
+// }).then(()=>{
+//     User.findAll().then(users=>{
+//         console.log(users[0]);
+//     })
+// });
 
 const db = {Sequelize,sequelize};
+
+fs.readdirSync(__dirname).filter(file=>file !== 'index.js' && file !== 'db.js')
+    .forEach(file =>{
+        const model = sequelize.import(path.join(__dirname,file));
+        db[model.name] = model;
+    })
 module.exports = db;

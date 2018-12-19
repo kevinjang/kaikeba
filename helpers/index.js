@@ -41,4 +41,35 @@ hbs.registerHelper('block',function (name) {
     //清空缓存
     blocks[name] = [];
     return val;
+});
+
+hbs.registerHelper('partOfDate',function (str,part,index) {
+    const date = new Date(str);
+    if(part == 'd'){
+        return date.getDate();
+    }
+    else if(part == 'M'){
+        return date.getMonth()+1;
+    }
+    else if(part == 'h'){
+        let h = date.getHours();
+        h = h < 10?'0'+h:h.toString();
+        return h[index];
+    }
+    else if(part == 'm'){
+        let m = date.getMinutes();
+        m = m < 10?('0'+m):m.toString();
+        return m[index];
+    }
+    else{
+        return '';
+    }
+});
+
+hbs.registerHelper('minusOne',function (num) {
+    return --num;
+});
+
+hbs.registerHelper('addOne',function (num) {
+    return ++num;
 })
