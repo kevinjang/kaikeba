@@ -2,12 +2,9 @@ const mysql = require('mysql');
 
 const cfg = {
     host: 'localhost',
-    user: 'root',
+    user: 'kevinjang',
     password: 'tingjiaN*&768*', // 连接池
-    define: {
-        timestamps: false,
-        freezeTableName: true
-    }
+    database:'kkb'
 }
 
 const pool = mysql.createPool(cfg);
@@ -29,6 +26,11 @@ module.exports ={
             // console.log()
             //查询方式2，直接通过连接池进行查询
             //省略了创建连接、最终释放连接的操作
+            // pool.query(sql,value,(err,results)=>{
+            //     if(err) reject(err);
+            //     else resolve(results);
+            // });
+
             pool.query(sql,value,(err,results)=>{
                 if(err) reject(err);
                 else resolve(results);

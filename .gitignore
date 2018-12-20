@@ -1,2 +1,4 @@
 
 node_modules
+model/index.js
+model/db.js
