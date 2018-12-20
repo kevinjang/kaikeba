@@ -19,10 +19,24 @@ const sequelize = new Sequelize('kkb', 'kevinjang', 'tingjiaN*&768*', {
 //     lastName: Sequelize.STRING
 // });
 //
-// User.sync({force: true}).then(() => {
+// User.sync({force: false}).then(() => {
 //     //插入若干测试数据
 //     console.log('sequelize run!');
+//     // User.create({
+//     //     firstName: 'Tom',
+//     //     lastName:'Cruise'
+//     // })
+// }).then(()=>{
+//     User.findAll().then(users=>{
+//         console.log(users[0]);
+//     })
 // });
 
 const db = {Sequelize,sequelize};
+
+fs.readdirSync(__dirname).filter(file=>file !== 'index.js' && file !== 'db.js')
+    .forEach(file =>{
+        const model = sequelize.import(path.join(__dirname,file));
+        db[model.name] = model;
+    })
 module.exports = db;
